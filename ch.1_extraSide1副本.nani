@@ -1,0 +1,105 @@
+#start
+
+@back home?
+@char kilot.dedault
+@char bm
+
+@emote kilot.speechless
+kilot: ……
+kilot: ……
+@sfx 電子音
+bm: 伊洛。
+kilot: ……
+@sfx 電子音
+bm: 伊洛。
+bm: 不要裝作聽不到，[br]說謊是不好的。
+bm: 妳要開始完成你的作業，[br]不要再看動畫片了。
+@animset kilot.shock
+@emote kilot.shock
+kilot: 唉啊——不要這麼死板嘛，[br]反正我就笨蛋，即使把作業做完出來也是零分啊。
+kilot: 人要善用時間，[br]已經知道結果的事情就不要浪費光陰啦。
+@sfx 電子音
+bm: 不要強詞奪理，伊洛。
+kilot: 才沒這回事。
+@sfx 電子音
+bm: ……
+
+@sfx 電視關掉的聲音
+@sfx JumpSFX?
+@animset kilot.shock
+kilot: 啊——！！！幹嘛關掉！！！[br]正要到最緊張的地方耶！！！
+@animset kilot.notice
+kilot: 開回來啦——！！！
+@sfx 電子音
+bm: 我已設定電視在三小時後才會再度開啟。
+bm: 在這期間請完成妳的作業。
+@animset kilot.shock
+kilot: 吼！[br]你真的很討厭耶！！！
+@sfx 急步走的腳步聲
+@sfx 電子音
+@emote bm.question
+bm: 伊洛，妳要去哪裡？
+kilot: 到外面去玩！
+kilot: 只要我準時在五點前回來，[br]你就不能限制我，對吧？
+kilot: 阿古亞孤兒人權保護法上寫著的！！！
+@sfx 電子音
+bm: ……
+kilot: 我是永遠不會向惡勢力屈服的，[br]放棄吧！！！
+@sfx 關門聲
+
+@back street
+kilot: 哈…
+kilot: 真討厭…[br]今天是結局篇的說…
+@sfx 開門聲
+kilot: ？
+是隔壁的開門聲嗎？
+我還從來沒遇上過住在隔壁的人呢…
+之前還曾經懷疑過是不是空房子，[br]後來發現那邊偶爾會傳來一些小小的雜音才知道是有人住的。
+會是什麼樣的人呢？
+
+@char kkhoppe
+@overridename khoppe name:???
+
+@sfx 腳步聲
+khoppe: …啊。
+khoppeOS: 唉啊？[br]小孩子？看起來還跟我同齡的樣子？
+khoppe: 妳是…[br]住在隔壁的鄰居…嗎？
+kilot: 嗯嗯。
+kilot: 我還是第一次看見妳耶，[br]我之前還以為隔壁的房子沒人住。
+khoppe: 我也是呢！
+khoppe: 褓姆機械人總跟我說隔壁是空房子，[br]可是我明明常常都會聽到你那邊傳來電視的聲音…[br]但它跟我解釋那是從隔隔壁傳來的…
+khoppe: 褓姆機械人為什麼要騙我啊？[br]好奇怪啊…
+kilot: …嘛，可能是它不想讓妳遇到我也說不定喔。
+khoppe: ？？？[br]為什麼？？？
+
+可能因為妳看起來就是個乖寶寶？
+也可能是我家的褓姆機械人向你家褓姆機械人打小報告，[br]說我是個壞孩子？
+
+kilot: 機械人的想法我們人類怎麼能理解呢？[br]它們可能就是想我們專心學習早日成為星球之光吧～
+khoppe: 是這樣嗎…
+khoppe: 雖然書本上的知識很重要，[br]但我覺得能跟同齡的人交流認識，[br]也是學習很重要的一環啊…
+
+啊，確定了。[br]真的是個乖寶寶
+怪不得她家的機械人會怕我『污染』她。
+咦？
+對了，說起來…
+
+kilot: …吶吶，我可以去妳家嗎？
+khoppe: 嗯…？[br]現在嗎？
+kilot: 對對，[br]還是妳現在有要去什麼地方？
+khoppe: "唔唔，也沒有…[br]我原本出門是想去散個步，[br]稍微活動一下身體…"
+kilot: 那那～[br]不然晚點我跟妳一起去散步？[br]妳看，兩個人散步比較不無聊吧？ 
+kilot: 而現在就先讓我去妳家，[br]我們一起看『命運愛戀²甜甜圈天使♡』的結局篇吧？！[br]吶？吶～？
+kilot: 我家的電視壞了，維修要晚上才能到，[br]但我真的很想看到結局！
+kilot: 可以嗎？？？[br]拜託～～～
+khoppe: 雖然不知道是怎樣的節目…[br]不過…
+khoppe: 嗯，一起看吧！
+kilot: 耶——！！！[br]太棒了！妳真是個好人！！！[br]那我們趕快進去吧！！！
+@sfx 腳步聲
+#兩人逐漸遠去，畫面淡出
+
+kilot: 妳竟然沒看過『命運愛戀．甜甜圈天使♡』嗎？！[br]這可是神作啊超好看的！
+kilot: 不過沒關係，等下我來給妳科普一下！[br]對了妳叫什麼？我是伊洛！
+@overridename khoppe
+khoppe: 謝謝…[br]…我、我叫荷珀！
+khoppe: 伊洛…[br]妳好，今後請多多指教！
