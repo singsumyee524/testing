@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initail-scale=1">
+    <link rel="stylesheet" href="com3102_css.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>COM3102 Project</title>
+    
+    <script>		
+        $(document).ready(function(){
+            $("#btnSubmit").click(function(){
+                var name = $("#name").val();
+                var sID = $("#sID").val();
+                var email = $("#email").val();
+                var programme = $("#programme").val();
+                var year = $("#year").val();
+                var password = $("#pwd").val();
+                var repassword = $("#rpwd").val();
+
+                if (name < 1){
+                    alert("Please enter your name.")
+                } else if(sID < 1){
+                    alert("Please enter the user ID. HSU students / staff may use your StudentID / StaffID.")
+                } else if (email < 1 || email.contains("@") == "false"){
+                    alert("Please enter your email.")
+                }
+                else if (programme < 1) {
+                    alert("Please enter your programme.")
+                } else if (year < 1) {
+                    alert("Please enter your year of entrance.")
+                }
+                else if (password < 1) {
+                    alert("Please enter your password.")
+                }else if(password != repassword){
+                    alert("Please repeat the password.");
+                }else{
+                    $("#form").submit();
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="cropped-HSU-Computing-smallest.png">
+            <h1 >HSU Fast Food Shop</h1>
+        </header>
+
+        <section>
+            <article class="center">
+                <h1>Sign Up</h1>
+                <p style="color:rgb(214, 91, 91)">Please complete all information with *.</p>
+                <p style="color:rgb(214, 91, 91)">HSU students / staff may use your StudentID / StaffID.</p>
+                <p style="color:rgb(214, 91, 91)">Public may use the user ID you want to use.</p>
+	        </article>
+            <hr>
+     
+            <form id="form" action="/signup" method="POST">
+                 <table>
+                    <tr>
+                        <td><b>Name:*</b></td>
+                        <td><input type="text" placeholder="Enter Your Name" id="name" name="name" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>UserID / HSU StudentID / HSU StaffID:*</b></td>
+                        <td><input type="text" placeholder="Enter Your ID" id="sID" name="sID" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Email:*</b></td>
+                        <td><input type="email" placeholder="Enter Your Email" id="email" name="email" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Programme:</b></td>
+                        <td><input type="text" placeholder="Enter Your Programme" id="programme" name="programme"></td>
+                    </tr>
+                     
+                     <tr>
+                        <td><b>Year of Entrance:</b></td>
+                        <td><input type="number" min="1970" max="2021" placeholder="Enter Your Year of Entrance" id="year" name="year"></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Password:*</b></td>
+                        <td><input type="password" placeholder="Enter Password" id="pwd" name="pwd" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Repeat Password:*</b></td>
+                        <td><input type="password" placeholder="Repeat Password" id="rpwd" name="rpwd" required></td>
+                    </tr>
+                </table>
+                <br><br>
+            
+                <div class="center">
+                    <a class="button button2 button3" href="http://localhost:3000/" style="margin-right:5px;">Back</a>
+                    <button class="button button3" id="btnSubmit" style="margin-right:5px;">Sign Up</button>
+                </div>
+            </form>
+            
+            <br><br>
+
+            <div class="center">
+                If you have an account already ->  
+                <a href="http://localhost:3000/login" style="color:#43aaa2;"><b>Login</b></a>
+            </div>
+        </section>
+		
+        <footer>
+            <div class="row">
+                <div class="col-sm-8">
+                    <img src="20181031_Logo_HSU_262x90px.png" alt="hsu Logo">
+                </div>
+                <div class="col-sm-4" style="float: right">
+                    <div class="row">
+                        <p>Items sold are non-refundable and non-exchangeable.</p>
+                    </div>
+                    <div class="row">
+                        <p>Free Delivery for all purchases.</p>
+                    </div>
+                    <div class="row">
+                        <p>Once we receive your payment, we will contact you for delivery</p>
+                    </div>
+                    <div class="row">
+                        <p>Contact us: <a href="mailto:com3102@hsu.edu.hk">com3102@hsu.edu.hk</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+   </body>
+</html>
+
+
+
+
