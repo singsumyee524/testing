@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--	E-Commerce
+   Author: Sharin Au, Kokulis Au, Happy Sing, Romeo Kung, Koko Shum, Harold Chan
+   Date:  21/09/2021
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initail-scale=1">
+    <link rel="stylesheet" href="com3105_css.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>COM3105 Project</title>
+
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function(){
+            $("#btnCheckout").click(function(){
+                $("#form").submit();
+            })
+        });
+
+        function transaction_process() {
+            var price = [50, 45, 30, 50, 50, 15];
+            var qty = 0;
+            var itemtot = 0;
+            window.sum = 0;
+
+            var i;
+
+            for (i = 0; i < 6; i++) {
+                qty = parseInt(document.querySelector("#qty" + i).value);
+                if (isNaN(qty)) {
+                    ;
+                } else {
+                    itemtot = qty * price[i];
+                    document.querySelector("#itemtot" + i).value = itemtot.toFixed(2);
+                    sum += itemtot;
+                }
+            }
+            document.querySelector("#sum").value = window.sum.toFixed(2);
+
+            if (window.sum <= 0) {
+                alert("Please enter number of quantity");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="cropped-HSU-Computing-smallest.png">
+            <a href="http://localhost:3000/log" class="button">Login/Logout</a>
+            <a href="http://localhost:3000/signup" class="button button4">Sign Up</a>
+            <h1>COM3105 E-Commerce Application Development</h1>
+        </header>
+
+        <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:3000/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://localhost:3000/view_catalog">Shopping Cart</a>
+                </li>
+            </ul>
+        </nav>
+		
+		<section>
+            <article>
+                <div class="jumbotron">
+                    <h2><b><i>Shopping Cart</i></b></h2>
+                </div>
+            </article>
+        </section>
+
+        <form id="form" action="/check_out" method="POST">
+            <table cellpadding="10">
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Amount</th>
+				</tr>
+				
+                <tr>
+                    <td>Yummy Pizza</td>
+                    <td><input type="number" id="qty0" size="5" name="qty0" onchange=transaction_process() value=0></td>
+                    <td>$50</td>
+                    <td><input type="number" id="itemtot0" size="10" readonly="readonly" value=0></td>
+                </tr>
+                <tr>
+                    <td>Chicken Wings</td>
+                    <td><input type="number" id="qty1"  size="5" name="qty1" onchange=transaction_process() value=0></td>
+                    <td>$45</td>
+                    <td><input type="number" id="itemtot1" size="10" readonly="readonly" value=0></td>
+                </tr>
+                <tr>
+                    <td>French Fries</td>
+                    <td><input type="number" id="qty2" size="5" name="qty2" onchange=transaction_process() value=0></td>
+                    <td>$30</td>
+                    <td><input type="number" id="itemtot2" size="10" readonly="readonly" value=0></td>
+                </tr>
+                <tr>
+                    <td>Fried Chicken</td>
+                    <td><input type="number" id="qty3" size="5" name="qty3" onchange=transaction_process() value=0></td>
+                    <td>$50</td>
+                    <td><input type="number" id="itemtot3" size="10" readonly="readonly" value=0></td>
+                </tr>
+                <tr>
+                    <td>Burger</td>
+                    <td><input type="number" id="qty4" size="5" name="qty4" onchange=transaction_process() value=0></td>
+                    <td>$50</td>
+                    <td><input type="number" id="itemtot4" size="10" readonly="readonly" value=0></td>
+                </tr>
+		        <tr>
+                    <td>Cola</td>
+                    <td><input type="number" id="qty5" size="5" name="qty5" onchange=transaction_process() value=0></td>
+                    <td>$15</td>
+                    <td><input type="number" id="itemtot5" size="10" readonly="readonly" value=0></td>
+                </tr>
+                <tr><td colspan="3">Shipping & Handling Fee: </td><td id="s_n_h"></td></tr>
+                <tr>
+                    <td colspan="3">Total Amount Sold: </td>
+                    <td><input type="number" id="sum" size="10" readonly="readonly" name="sum" value=0></td>
+                </tr>
+
+            </table>
+            <br/>
+            <input type="reset" class="button button2 button3" value="Reset" size="10" />
+            <input type="button" class="button button3" id="btnCheckout" value="Checkout - Use Paypal"/>
+            <input type="text" name="sid" hidden value=<%= sid%>>
+        </form>
+		<br></br>
+
+        <footer>
+            <div class="row">
+                <div class="col-sm-8">
+                    <img src="20181031_Logo_HSU_262x90px.png" alt="hsu Logo">
+                </div>
+                <div class="col-sm-4" style="float: right">
+                    <div class="row">
+                        <p>All sales final - No refund or exchange</p>
+                    </div>
+                    <div class="row">
+                        <p>Once we receive your payment, we will contact you for delivery</p>
+                    </div>
+                    <div class="row">
+                        <p>Contact us: <a href="mailto:group1@hsu.edu.hk">group1@hsu.edu.hk</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html
+
+
